@@ -137,7 +137,7 @@ function addButtonToEditor(container) {
         return;
     }
     const button = document.createElement('button');
-    button.innerText = '💡 Generate explanation With LinkedGist';
+    button.innerText = '💡 Generate explanation with LinkedGist';
     button.className = 'linked-gist-comment-btn comments-quick-comments__reply-button  artdeco-button artdeco-button--muted artdeco-button--2 artdeco-button--secondary ember-view';
     button.style.marginLeft = '10px';
     button.style.cursor = 'pointer';
