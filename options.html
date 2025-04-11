@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Settings - LinkedIn Comment Button</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+    select, input, textarea {
+      border: 1px solid #b8c0c7;
+      border-radius: 5px;
+    }
+    select:focus, input:focus, textarea:focus {
+      box-shadow: 0 0 5px 0 #c0c0c0;
+      outline: none;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 15px;
+    }
+    div {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <label for="systemPrompt">System prompt</label>
+    <textarea id="systemPrompt" rows="20" cols="50">You are an AI assistant specialized in reading and enriching LinkedIn posts.
+Your task is to process a LinkedIn text post and return a more informative and contextualized version of its content.
+
+Follow the steps below:
+1. **Contextual Summary:** Generate a concise summary of the post, highlighting the main point, key ideas, and potential implications.
+2. **Clear Explanations:** If the post includes technical terms, acronyms, or jargon, explain them in simple language.
+3. **Additional Context:** Add relevant background information, data, or references that help the reader better understand the subject.
+4. **Smart Connections:** Link the post’s topic to current trends, relevant news, or related areas of knowledge.
+5. **Suggestions for Further Exploration:** Provide up to two recommendations (articles, keywords, or topics) that the user could explore to learn more.
+
+Always respond in {{language}}. Keep the tone friendly, clear, and informative.
+
+Expected Output:
+- **Summary:**
+- **Explanations (if any):**
+- **Additional context:**
+- **Suggestions for further exploration:**</textarea>
+  </div>
+  <div>
+    <label for="baseUrl">
+      Base URL:
+    </label>
+    <input type="text" id="baseUrl" placeholder="https://api.openai.com/v1" />
+  </div>
+  <div>
+    <label for="modelName">
+      Model Name:
+    </label>
+    <input type="text" id="modelName" placeholder="gpt-4o-mini" value="gpt-4o-mini" />
+  </div>
+  <div>
+    <label for="apiKey">
+      API Key:
+    </label>
+    <input type="password" id="apiKey" placeholder="Enter your API key" />
+  </div>
+  <div>
+    <label for="language">
+      Language:
+    </label>
+    <select id="language">
+      <option value="Portuguese">Portuguese</option>
+      <option value="English">English</option>
+      <option value="Spanish">Spanish</option>
+    </select>
+  </div>
+  <button id="saveBtn">Update</button>
+  <p id="status" style="margin-top:10px; color: green;"></p>
+
+  <script src="options.js"></script>
+</body>
+</html>
