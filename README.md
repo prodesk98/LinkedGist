@@ -11,7 +11,7 @@ When a user clicks on any LinkedIn post, a button appears allowing them to gener
 - Relevant **background information** or connections to related topics
 - Suggestions for **further exploration**
 
-All responses are returned in **Portuguese**, making it ideal for Brazilian and Portuguese-speaking professionals.
+All responses are returned in the selected language.
 
 ## 🛠️ Installation (Development)
 
@@ -21,11 +21,12 @@ cd LinkedGist
 ```
 
 1. Load the extension into your browser:
+    - Extract the project folder
     - Go to `chrome://extensions/`
     - Enable "Developer mode"
     - Click "Load unpacked" and select the project folder
 
-2. Configure your OpenAI API key (more info soon)
+2. Go options page and enter your OpenAI API key.
 
 ## 📦 Project Structure
 
@@ -34,7 +35,6 @@ LinkedGist/
 │
 ├── manifest.json     # Extension config
 ├── content.js        # Injects the button into LinkedIn posts
-├── background.js     # Handles API requests
 └── styles.css        # Styling for the injected UI
 ```
 
