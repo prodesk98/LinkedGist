@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "LinkedGist",
     "version": "1.1",
-    "description": "LinkedGist is a browser extension that summarizes LinkedIn posts with contextual insights, explanations, and enriched information — helping you understand content faster and more deeply.",
+    "description": "LinkedGist is a browser extension that summarizes LinkedIn posts with contextual insights, explanations, and enriched information.",
     "permissions": ["storage", "scripting"],
     "content_scripts": [
       {
