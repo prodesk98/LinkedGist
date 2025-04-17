@@ -26,9 +26,10 @@
     background-color: #004b71;
 }
 .linked-gist-comment-response {
-    background: #f4f2ee;
+    margin: 5px;
     padding: 20px;
     max-height: 400px;
-    overflow-y: scroll;
+    overflow-y: auto;
     border-radius: 9px;
+    border: 2px groove !important;
 }
