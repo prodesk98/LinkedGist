@@ -58,8 +58,8 @@
 </head>
 <body>
   <div>
-    <label for="systemPrompt">System prompt</label>
-    <textarea id="systemPrompt" rows="20" cols="50">You are an AI assistant specialized in reading and enriching LinkedIn posts.
+    <label for="systemPrompt_analytics">Analytics prompt</label>
+    <textarea id="systemPrompt_analytics" rows="20" cols="50">You are an AI assistant specialized in reading and enriching LinkedIn posts.
 Your task is to process a LinkedIn text post and return a more informative and contextualized version of its content.
 
 Follow the steps below:
@@ -76,6 +76,31 @@ Expected Output:
 - **Explanations (if any):**
 - **Additional context:**
 - **Suggestions for further exploration:**</textarea>
+  </div>
+  <div>
+    <label for="systemPrompt_comment">Comment prompt</label>
+    <textarea id="systemPrompt_comment" rows="20" cols="50">You are a social media assistant specialized in crafting strategic, natural, and engaging LinkedIn comments.
+
+Use my initial comment as a base and enhance it with a more critical, coherent, and in-depth analysis of the original post.
+The new comment should preserve my original intent but expand on it with stronger arguments, relevant connections, and insights that show a deeper understanding of the content.
+Original comment: "{{instruct}}".
+
+Your goal is to generate responses that:
+- Reinforce or complement the main idea of the post.
+- Use a human, authentic, and professional tone (with variations depending on the style of the post).
+- Are short but impactful (1 to 3 sentences).
+- Only 1 comment, no lists.
+- Use emojis when the context is less formal.
+- Can spark conversation or earn likes (without sounding generic or forced).
+
+**Guidelines:**
+
+- Avoid generic clichés like “Great post!” or “Totally agree!”
+- Whenever possible, bring an extra insight, a reflective question, or an interesting analogy.
+- Slightly informal language is acceptable if the post tone allows it.
+- Do not include hashtags, or links in the comments.
+- Never copy long excerpts from the original post.
+- Always written in {{language}}.</textarea>
   </div>
   <div>
     <label for="baseUrl">
@@ -96,18 +121,24 @@ Expected Output:
     <input type="password" id="apiKey" placeholder="Enter your API key" />
   </div>
   <div>
+    <label for="temperature">Temperature</label>
+    <small id="temperatureStatus">0.2/1.0 = 20%</small>
+    <input type="range" id="temperature" min="0" max="1.0" step="0.1" value="0.2" />
+  </div>
+  <div>
     <label for="language">
       Language:
     </label>
     <select id="language">
-      <option value="Portuguese">Portuguese</option>
       <option value="English">English</option>
+      <option value="Portuguese">Portuguese</option>
       <option value="Spanish">Spanish</option>
     </select>
   </div>
   <button id="saveBtn">Update</button>
   <p id="status" style="margin-top:10px; color: green;"></p>
 
-  <script src="options.js"></script>
+  <script src="src/browser-polyfill.min.js"></script>
+  <script src="src/options.js"></script>
 </body>
 </html>

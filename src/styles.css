@@ -27,9 +27,19 @@
 }
 .linked-gist-comment-response {
     margin: 5px;
+    color: black !important;
+    background: #f4f2ee;
     padding: 20px;
     max-height: 400px;
-    overflow-y: auto;
+    overflow-y: scroll;
     border-radius: 9px;
     border: 2px groove !important;
+}
+.linked-gist-comment-response > strong {
+    font-weight: bold !important;
+    color: black !important;
+}
+.linked-gist-comment-response > p {
+    margin: 0 !important;
+    color: black !important;
 }
