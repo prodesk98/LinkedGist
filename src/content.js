@@ -203,14 +203,8 @@ function addButtonToEditor(element) {
 
                 handlerGenerate(fullMarkdown, element, instruct, true).then((response) => {
                     if (response) {
-                        const matches = [...response.matchAll(/"(.*?)"/g)].map(m => m[1]);
-                        let cleanResponse = response;
-                        if (matches.length > 0) {
-                            const regex = /\(.*?\)/g;
-                            cleanResponse = response.replace(regex, '');
-                            element.innerHTML = cleanResponse;
-                        }
-                        element.innerHTML = cleanResponse;
+                        const regex = /"(.*?)"/g;
+                        element.innerHTML = response.replace(regex, '');
                         element.dispatchEvent(new Event('input', {bubbles: true}));
                     } else {
                         alert('No comment generated.');
