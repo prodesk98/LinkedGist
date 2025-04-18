@@ -204,7 +204,7 @@ function addButtonToEditor(element) {
                 handlerGenerate(fullMarkdown, element, instruct, true).then((response) => {
                     if (response) {
                         const matches = [...response.matchAll(/"(.*?)"/g)].map(m => m[1]);
-                        let cleanResponse = '';
+                        let cleanResponse = response;
                         if (matches.length > 0) {
                             const regex = /\(.*?\)/g;
                             cleanResponse = response.replace(regex, '');
